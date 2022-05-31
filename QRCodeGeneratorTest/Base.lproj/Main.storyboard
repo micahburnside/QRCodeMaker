@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="02s-6T-joC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Code Generator View Controller-->
+        <scene sceneID="Qwx-Do-Imc">
+            <objects>
+                <viewController id="7ZV-Ch-gSu" customClass="QRCodeGeneratorViewController" customModule="QRCodeGeneratorTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VQ6-mI-d0W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQU-3K-EY4">
+                                <rect key="frame" x="12" y="130" width="390" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="eUU-og-Prz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m2M-tP-rVM">
+                                <rect key="frame" x="57" y="384" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="mTg-b9-Dmn"/>
+                                    <constraint firstAttribute="width" constant="300" id="u24-m7-mbq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvF-mW-oOB">
+                                <rect key="frame" x="12" y="231" width="390" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="pma-Ft-kvr"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Generate QR Code"/>
+                                <connections>
+                                    <action selector="generateQRCodePressed:" destination="7ZV-Ch-gSu" eventType="touchUpInside" id="OoD-TF-nAG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2E8-xA-jjs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CQU-3K-EY4" firstAttribute="top" secondItem="2E8-xA-jjs" secondAttribute="top" constant="42" id="4ea-5B-G9X"/>
+                            <constraint firstItem="2E8-xA-jjs" firstAttribute="trailing" secondItem="CQU-3K-EY4" secondAttribute="trailing" constant="12" id="6Jc-vC-f3n"/>
+                            <constraint firstItem="CQU-3K-EY4" firstAttribute="leading" secondItem="2E8-xA-jjs" secondAttribute="leading" constant="12" id="OgF-S9-5tZ"/>
+                            <constraint firstItem="SvF-mW-oOB" firstAttribute="top" secondItem="CQU-3K-EY4" secondAttribute="bottom" constant="53" id="TsO-No-fy2"/>
+                            <constraint firstItem="SvF-mW-oOB" firstAttribute="leading" secondItem="2E8-xA-jjs" secondAttribute="leading" constant="12" id="a9O-aq-AIL"/>
+                            <constraint firstItem="2E8-xA-jjs" firstAttribute="trailing" secondItem="SvF-mW-oOB" secondAttribute="trailing" constant="12" id="bFb-Da-fSr"/>
+                            <constraint firstItem="2E8-xA-jjs" firstAttribute="trailing" secondItem="m2M-tP-rVM" secondAttribute="trailing" constant="57" id="bgn-bJ-WvS"/>
+                            <constraint firstItem="m2M-tP-rVM" firstAttribute="leading" secondItem="2E8-xA-jjs" secondAttribute="leading" constant="57" id="grP-ck-0uf"/>
+                            <constraint firstItem="m2M-tP-rVM" firstAttribute="top" secondItem="SvF-mW-oOB" secondAttribute="bottom" constant="105" id="tll-Px-1fN"/>
+                            <constraint firstItem="2E8-xA-jjs" firstAttribute="bottom" secondItem="m2M-tP-rVM" secondAttribute="bottom" constant="178" id="viQ-fB-UmL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="h5V-Hl-d8r"/>
+                    <connections>
+                        <outlet property="generateQRCodeButton" destination="SvF-mW-oOB" id="lrb-Mr-mIG"/>
+                        <outlet property="imageView" destination="m2M-tP-rVM" id="Ivg-hF-IPO"/>
+                        <outlet property="urlTextFieldOutlet" destination="CQU-3K-EY4" id="zmb-AC-cec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v21-Wz-nui" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1342" y="38"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nm3-nv-P11">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="02s-6T-joC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Te-MD-QYm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7ZV-Ch-gSu" kind="relationship" relationship="rootViewController" id="aWr-wS-ArN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZB6-6O-LGo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-475" y="-190"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
